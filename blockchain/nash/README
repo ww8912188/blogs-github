@@ -1,0 +1,11 @@
+deploy ERC20
+generate abi and bin using remix:
+http://remix.ethereum.org/#optimize=false&version=soljson-v0.4.25+commit.59dbf8f1.js
+
+1. geth attach ipc:gethDataDir/geth.ipc
+2. loadScript('/opt/nash/Simple.abi')
+3. loadScript('/opt/nash/Simple.bin')
+
+geth import private key
+https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts
+geth account import <keyfile>

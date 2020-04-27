@@ -1,0 +1,81 @@
+build geth:
+https://medium.com/cybermiles/running-a-quick-ethereum-private-network-for-experimentation-and-testing-6b1c23605bce
+
+1. install go:
+cd /opt/go-ethereum
+make geth
+
+2. add geth to ENV
+export PATH="$PATH:/opt/go-ethereum/build/bin"
+
+3. generate account
+cd ~
+mkdir gethDataDir
+geth account new --datadir ~/gethDataDir
+
+4. generate genesis.json
+{
+  "config": {
+    "chainId": 12345,
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
+  "difficulty": "1",
+  "gasLimit": "2100000",
+  "alloc": {
+    "0x4fe77cb0cdc5d302778a4096fad97c5c5313d4b5": {
+      "balance": "20000000000000000000"
+    },
+    "0xd0da98b9d11a6632e0f534a5ff32152c8bc26629": {
+      "balance": "20000000000000000000"
+    }
+  }
+}
+
+5. initialize blockchain
+cd ~/gethDataDir
+geth --datadir ~/gethDataDir/ init genesis.json
+
+6. start ethereum
+cd ~
+geth --mine --minerthreads=1 --datadir ~/gethDataDir --networkid 12345 --rpc --rpcaddr 0.0.0.0 --rpcport=8547
+
+7. geth interact env
+geth attach ipc:gethDataDir/geth.ipc
+
+Enable RPC:
+https://gist.github.com/fishbullet/04fcc4f7af90ee9fa6f9de0b0aa325ab
+geth invoke option:
+  --rpc                  Enable the HTTP-RPC server
+  --rpcaddr value        HTTP-RPC server listening interface (default: "localhost")
+  --rpcport value        HTTP-RPC server listening port (default: 8545)
+
+
+geth transfer ETH:
+http://blog.bradlucas.com/posts/2017-08-17-send-eth-from-geth-console/
+1. personal.listAccounts
+2. web3.fromWei(eth.getBalance(eth.coinbase))
+3. personal.unlockAccount(eth.coinbase)
+4. eth.sendTransaction({from:eth.coinbase, to:"0x5182fc91bd7ec4703a9244a69bbe44d9e91059f5", value: web3.toWei(1, "ether")})
+
+About chain ID:
+https://ethereum.stackexchange.com/questions/17051/how-to-select-a-network-id-or-is-there-a-list-of-network-ids
+
+deploy ERC20
+generate abi and bin using remix:
+http://remix.ethereum.org/#optimize=false&version=soljson-v0.4.25+commit.59dbf8f1.js
+since account is hard colded in erc20 source code, so we need add account to wallet first
+
+1. geth account list --datadir ./keystore/
+2. geth account import --datadir /root/gethDataDir/keystore/ /root/gethDataDir/key.pri
+3. geth account list
+4. geth attach ipc:geth.ipc
+5. personal.listAccounts  -> should contain account 0xc5E33b3CED9aF1c58875759cE1A179b9Ee06761d
+6. personal.unlockAccount("0xc5E33b3CED9aF1c58875759cE1A179b9Ee06761d")
+7. loadScript('/opt/nash/Simple.abi')
+8. loadScript('/opt/nash/Simple.bin')
+
+geth import private key
+https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts
+geth account import <keyfile>

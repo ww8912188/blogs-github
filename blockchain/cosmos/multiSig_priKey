@@ -1,0 +1,41 @@
+[root@QA-01 validator]# gaiacli keys add p1
+Enter a passphrase to encrypt your key to disk:
+Repeat the passphrase:
+
+NAME:	TYPE:	ADDRESS:					PUBKEY:
+p1	local	cosmos12nqg780aj9glths0nsz9l9jv0uyyqqf07gwzjn	cosmospub1addwnpepqdz4h084sk09f407aayj75mg75jnk7wn2dur3jywyqvnpc8ysuktz6l46nr
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+pencil unknown friend kid pact goddess fragile hamster tooth wrap bean proof plastic robust animal awesome degree canyon neglect proud virus street enjoy wonder
+[root@QA-01 validator]# gaiacli keys list
+NAME:	TYPE:	ADDRESS:					PUBKEY:
+andyyi	local	cosmos1cxsxqy3v2n3k0hj08wsxc8hc4svyuhwvudmhle	cosmospub1addwnpepqg8l6p7f0jm2p5ddh5n58ltlltptjy75rswnyc2lxpd752qva5mvgr39h02
+p1	local	cosmos12nqg780aj9glths0nsz9l9jv0uyyqqf07gwzjn	cosmospub1addwnpepqdz4h084sk09f407aayj75mg75jnk7wn2dur3jywyqvnpc8ysuktz6l46nr
+validator0	local	cosmos1z7jw2deueg37nd6v3flmn4wy2v3nhz55wyjqgk	cosmospub1addwnpepqtelxf5p88c4vxhuujfzlzrf5859845ye650f5vukgcs7prd77cucykp63a
+validator1	local	cosmos1wpw2nrq850mwgrhteh3jwc2g7w9led2huhck90	cosmospub1addwnpepq0gkhf9m0rkr6gych3y4q2ll24zfv6yt9nwtt9kgv0t3tp7advjygffrpyl
+validator2	local	cosmos1h7pp5zjg9dyf8msl6sahdm9kdw2nvv9k7ynhh2	cosmospub1addwnpepqdmjx7lujp77hsewykdhuuxzh4mn7s7wjklvsqyq3wfk5zpchvauz40y646
+validator3	local	cosmos1g4zx6dw3d4kd7zae0lhrkup553q8unh6jh6wde	cosmospub1addwnpepq02q4c4khg0m9q05q28rz4dyfgnftvjtfynncgj30d5g9nqm7c8f6d2643h
+[root@QA-01 validator]# gaiacli keys add p2
+Enter a passphrase to encrypt your key to disk:
+Repeat the passphrase:
+
+NAME:	TYPE:	ADDRESS:					PUBKEY:
+p2	local	cosmos18a37lr2swr97gjzlpqsgvt42r6qhduxt49nvqd	cosmospub1addwnpepqdkj0zlyay02e63sx2tmpfwump949ymrzx9pxueymq7jnty20f03v5llju2
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+consider brave record extend cruel elite dove minor cycle sail sign sleep audit again flip hire cloud reason cabbage guess harsh indicate rug crouch
+[root@QA-01 validator]# gaiacli keys add p3
+Enter a passphrase to encrypt your key to disk:
+Repeat the passphrase:
+
+NAME:	TYPE:	ADDRESS:					PUBKEY:
+p3	local	cosmos1t2fvhk9anvx3r7z4u223u8nfpa4whaarh2aals	cosmospub1addwnpepqgscjzltg8fy3tt4rke64wyah09f6ygnd3y64mqakqskzs5x5nqaxacsmx0
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+very penalty wash scheme web settle slow cupboard drive proud kitchen scene dutch oak comic craft elephant same clay zero drum flip traffic page

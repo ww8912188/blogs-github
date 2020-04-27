@@ -1,0 +1,5 @@
+# run vechain p2p node
+docker run -d -v /opt/data/vechain/org.vechain.thor:/root/.org.vechain.thor -p 8669:8669 -p 11235:11235 -p 11235:11235/udp --name thor-node vechain/thor solo --persist --api-addr 0.0.0.0:8669
+
+# testnet faucet
+curl -X POST -d '{"to":"Your_Address"}' -H "Content-Type: application/json" https://faucet.outofgas.io/requests
