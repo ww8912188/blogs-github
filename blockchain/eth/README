@@ -37,10 +37,10 @@ geth account new --datadir ./gethDataDir
 geth --datadir ./gethDataDir/ init genesis.json
 
 6. start ethereum
-geth --mine --minerthreads=1 --datadir ~/gethDataDir --networkid 12345 --rpc --rpcaddr 0.0.0.0 --rpcport=8547
+geth --mine --minerthreads=1 --datadir ./gethDataDir --networkid 12345 --http --http.addr 0.0.0.0 --http.port=8547
 
 7. geth interact env
-geth attach ipc:gethDataDir/geth.ipc
+geth attach gethDataDir/geth.ipc
 
 Enable RPC:
 https://gist.github.com/fishbullet/04fcc4f7af90ee9fa6f9de0b0aa325ab
