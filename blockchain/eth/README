@@ -37,7 +37,7 @@ geth account new --datadir ./gethDataDir
 geth --datadir ./gethDataDir/ init genesis.json
 
 6. start ethereum
-geth --mine --minerthreads=1 --datadir ./gethDataDir --networkid 12345 --http --http.addr 0.0.0.0 --http.port=8547
+geth --mine --miner.threads=1 --datadir ./gethDataDir --networkid 12345 --http --http.addr 0.0.0.0 --http.port=8547
 
 7. geth interact env
 geth attach gethDataDir/geth.ipc
