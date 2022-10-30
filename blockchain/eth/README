@@ -11,7 +11,7 @@ export PATH="$PATH:/opt/go-ethereum/build/bin"
 3. generate account
 cd ~
 mkdir gethDataDir
-geth account new --datadir ~/gethDataDir
+geth account new --datadir ./gethDataDir
 
 4. generate genesis.json
 {
@@ -34,11 +34,9 @@ geth account new --datadir ~/gethDataDir
 }
 
 5. initialize blockchain
-cd ~/gethDataDir
-geth --datadir ~/gethDataDir/ init genesis.json
+geth --datadir ./gethDataDir/ init genesis.json
 
 6. start ethereum
-cd ~
 geth --mine --minerthreads=1 --datadir ~/gethDataDir --networkid 12345 --rpc --rpcaddr 0.0.0.0 --rpcport=8547
 
 7. geth interact env
